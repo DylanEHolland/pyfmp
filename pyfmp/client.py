@@ -1,5 +1,5 @@
 import os
-import pyfmp.company as company
+from pyfmp.company import company as company
 
 class fmp_client:
     key = None
@@ -15,4 +15,4 @@ class fmp_client:
                 raise RuntimeError("Requires FINANCIAL_MODELING_PREP_KEY")
     
     def company(self, ticker):
-        return company.company(ticker, self)
+        return company(ticker, self)

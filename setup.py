@@ -2,7 +2,7 @@ from distutils.core import setup
 setup(
   name = 'pyfmp',         
   packages = ['pyfmp'],   
-  version = '0.1',      
+  version = '0.11',      
   license='bsd-3-clause',
   description = 'A wrapper around Financial Modeling Prep\'s api',
   author = 'Dylan E. Holland', 
@@ -17,7 +17,6 @@ setup(
   classifiers=[
     'Development Status :: 3 - Alpha',
     'Intended Audience :: Developers',
-    'License :: OSI Approved :: BSD 3-clause "New" or "Revised" license', 
     'Programming Language :: Python :: 3',    
   ],
 )   

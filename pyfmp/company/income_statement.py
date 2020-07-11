@@ -39,11 +39,13 @@ columns = {
 }
 
 class income_statement:
+    symbol = None
     statements = None
     index = None
 
     def __init__(self, ticker, client):
         self.statements = []
+        self.symbol = ticker
 
         for row in income_statement_request(client, ticker):
             self.statements.append(individual_income_statement(**row))
@@ -58,6 +60,9 @@ class income_statement:
             raise StopIteration
 
         return self.statements[self.index]
+
+    def __str__(self):
+        return "<%s$ income statements>" % self.symbol
 
 class individual_income_statement:
     data = None

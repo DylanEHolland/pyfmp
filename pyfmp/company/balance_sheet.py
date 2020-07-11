@@ -50,13 +50,15 @@ columns = {
     'finalLink': [str, None],
 }
 
-class balance_sheet:
+class balance_sheets:
     sheets = None
+    symbol = None
     index = None
     keys = None
 
     def __init__(self, ticker, client):
         self.sheets = []
+        self.symbol = ticker
         for row in bs(client, ticker):
             self.sheets.append(individual_balance_sheet(**row))
 
@@ -71,6 +73,9 @@ class balance_sheet:
 
         return self.sheets[self.index]
 
+    def __str__(self):
+        return "<%s$ balance sheets>" % self.symbol
+
 class individual_balance_sheet:
     data = None
     index = None
@@ -79,13 +84,9 @@ class individual_balance_sheet:
     def __init__(self, **data):
         self.index = -1
         self.data = {}
-        # print(data.get('period'))
-        # exit(-1)
         for key in data:
-            #print("'%s':" % key, "[float, 0],") #data.get(key))
             if key in columns:
                 value = data[key]
-                print(key)
                 if columns[key][0] != datetime:
                     self.data[key] = columns[key][0](value)
                 else:
