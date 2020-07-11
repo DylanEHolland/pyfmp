@@ -8,7 +8,7 @@ setup(
   author = 'Dylan E. Holland', 
   author_email = 'salinson1138@gmail.com',
   url = 'https://github.com/DylanEHolland/pyfmp',
-  download_url = 'https://github.com/DylanEHolland/pyfmp/archive/0.1.tar.gz', 
+  download_url = 'https://github.com/DylanEHolland/pyfmp/archive/0.11.tar.gz', 
   keywords = ['SOME', 'MEANINGFULL', 'KEYWORDS'],
   install_requires=[
           'requests',
