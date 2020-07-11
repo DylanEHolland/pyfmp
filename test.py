@@ -25,3 +25,10 @@ def test_company_income_statement():
         for key, value in row:
             print("\t", key + ":", value)
         print("\n===\n")
+
+def test_company_balance_sheet():
+    firm = pyfmp.client().company("AAPL")
+    for row in firm.balance_sheet():
+        for key, value in row:
+            print("\t", key + ":", value)
+        print("\n\n")

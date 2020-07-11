@@ -44,7 +44,6 @@ class income_statement:
 
     def __init__(self, ticker, client):
         self.statements = []
-        self.index = -1
 
         for row in income_statement_request(client, ticker):
             self.statements.append(individual_income_statement(**row))

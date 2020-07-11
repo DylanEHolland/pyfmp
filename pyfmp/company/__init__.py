@@ -1,6 +1,7 @@
 from requests.api import get
 from .profile import company_profile, float_columns
 from .income_statement import income_statement
+from .balance_sheet import balance_sheet
 
 class company:
     ticker = None
@@ -11,7 +12,7 @@ class company:
         self.client = client
 
     def balance_sheet(self):
-        pass
+        return balance_sheet(self.ticker, self.client)
 
     def cash_flow(self):
         pass
