@@ -2,13 +2,13 @@ from distutils.core import setup
 setup(
   name = 'pyfmp',         
   packages = ['pyfmp', 'pyfmp.company'],   
-  version = '0.14',      
+  version = '0.15',      
   license='bsd-3-clause',
   description = 'A wrapper around Financial Modeling Prep\'s api',
   author = 'Dylan E. Holland', 
   author_email = 'salinson1138@gmail.com',
   url = 'https://github.com/DylanEHolland/pyfmp',
-  download_url = 'https://github.com/DylanEHolland/pyfmp/archive/0.14.tar.gz', 
+  download_url = 'https://github.com/DylanEHolland/pyfmp/archive/0.15.tar.gz', 
   keywords = ['FINANCIAL', 'MODELING', 'PREP', 'API'],
   install_requires=[
           'requests',
