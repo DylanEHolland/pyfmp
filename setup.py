@@ -2,7 +2,7 @@ from distutils.core import setup
 setup(
   name = 'pyfmp',         
   packages = ['pyfmp', 'pyfmp.company'],   
-  version = '0.13',      
+  version = '0.14',      
   license='bsd-3-clause',
   description = 'A wrapper around Financial Modeling Prep\'s api',
   author = 'Dylan E. Holland', 
