@@ -1,1 +1,1 @@
-from .client import fmp_client as client
+from pyfmp.client import fmp_client as client
