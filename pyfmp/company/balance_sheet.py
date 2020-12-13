@@ -56,6 +56,7 @@ class balance_sheets:
     index = None
     keys = None
 
+
     def __init__(self, ticker, client):
         self.sheets = []
         self.symbol = ticker
@@ -76,6 +77,9 @@ class balance_sheets:
     def __str__(self):
         return "<%s$ balance sheets>" % self.symbol
 
+    def last(self, n = 0):
+        return self.sheets[0]
+
 class individual_balance_sheet:
     data = None
     index = None
@@ -90,10 +94,11 @@ class individual_balance_sheet:
                 if columns[key][0] != datetime:
                     self.data[key] = columns[key][0](value)
                 else:
-                    self.data[key] = datetime.strptime(
-                        value.split(" ")[0],
-                        "%Y-%m-%d"
-                    )
+                    if value:
+                        self.data[key] = datetime.strptime(
+                            value.split(" ")[0],
+                            "%Y-%m-%d"
+                        )
         
         self.keys = list(self.data.keys())
 
@@ -105,6 +110,10 @@ class individual_balance_sheet:
         if key in columns:
             return self.data.get(key)
 
+    def __getitem__(self, key):
+        if key in columns:
+            return self.data.get(key)
+            
     def __next__(self):
         if self.index < len(self.keys) - 1:
             self.index += 1
