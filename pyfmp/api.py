@@ -52,3 +52,25 @@ def income_statement(client, company_ticker, quarter = False):
 def balance_sheet(client, company_ticker):
     data = endpoint(client, "balance-sheet-statement", company_ticker)
     return data
+
+def quote(client, company_ticker):
+    url = "%s/quote/%s?apikey=%s" % (
+        base_url,
+        company_ticker,
+        client.key
+    )
+
+    response = requests.get(url)
+    response = json.loads(response.text)
+    return response[0]
+
+def stock_list(client):
+    url = "%s/stock/list?apikey=%s" % (
+        base_url,
+        client.key
+    )
+
+    response = requests.get(url)
+    response = json.loads(response.text)
+    return response
+

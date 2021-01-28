@@ -2,6 +2,7 @@ from requests.api import get
 from pyfmp.company.profile import company_profile, float_columns
 from pyfmp.company.income_statement import income_statement
 from pyfmp.company.balance_sheet import balance_sheets
+from pyfmp.company.quote import quote
 
 class company:
     ticker = None
@@ -22,3 +23,6 @@ class company:
 
     def profile(self):
         return company_profile(self.ticker, self.client)
+
+    def quote(self):
+        return quote(self.ticker, self.client)
