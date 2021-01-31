@@ -62,7 +62,9 @@ def quote(client, company_ticker):
 
     response = requests.get(url)
     response = json.loads(response.text)
-    return response[0]
+    #print(response)
+    if len(response) > 0:
+        return response[0]
 
 def stock_list(client):
     url = "%s/stock/list?apikey=%s" % (
@@ -70,7 +72,10 @@ def stock_list(client):
         client.key
     )
 
+    #print(url)
     response = requests.get(url)
+    #print(response.text)
     response = json.loads(response.text)
+    
     return response
 

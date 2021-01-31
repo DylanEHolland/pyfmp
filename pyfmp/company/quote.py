@@ -31,13 +31,18 @@ columns = {
     'previousClose': [float, 0],
     'priceAvg50': [float, 0], 
     'priceAvg200': [float, 0],
+    'pe': [float, 0],
+    'volume': [float, 0]
 }
 
 class quote:
     data = None
 
     def __init__(self, company_ticker, client):
-        data = fetch_quote(client, company_ticker)    
+        data = fetch_quote(client, company_ticker) 
+        if not data:
+            raise AttributeError("Returned nothing !?")
+
         self.data = {}
         for key in data:
             if key in columns:
